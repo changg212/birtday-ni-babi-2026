@@ -180,7 +180,7 @@ function bindFilmMusic(v){
  v.addEventListener('pause',()=>{resumeFilmMusic();syncPlay();});
  v.addEventListener('ended',()=>{resumeFilmMusic();syncPlay();});
  v.addEventListener('error',()=>{resumeFilmMusic();syncPlay();if(help)help.classList.remove('hidden');});
- if(playButton)playButton.addEventListener('click',async()=>{try{if(v.ended)v.currentTime=0;await v.play();}catch(e){if(help){help.classList.remove('hidden');help.textContent='Add your video to '+v.getAttribute('src');}syncPlay();}});
+ if(playButton)playButton.addEventListener('click',async()=>{try{if(v.ended)v.currentTime=0;await v.play();}catch(e){if(help){help.classList.remove('hidden');help.textContent=' '+v.getAttribute('src');}syncPlay();}});
  syncPlay();
 }
 
